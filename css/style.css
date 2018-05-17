@@ -2,4 +2,22 @@
     box-sizing: border-box;
   }
 
-  
+  .bodyMain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .joke {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      width: 600px;
+      height: 300px;
+      border: 2px solid tomato;
+      border-radius: 20px;
+      padding: 10px;
+  }
+
