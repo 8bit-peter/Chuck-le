@@ -4,12 +4,15 @@
 
   .bodyMain {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
   }
 
   .joke {
+      margin: 10px 0px;
+      font-size: 18px;
       display: flex;
       flex-flow: column;
       justify-content: center;

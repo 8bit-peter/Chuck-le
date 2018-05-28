@@ -10,4 +10,5 @@ $( () => {
         $('.jokeContent').text(e.value);
     });
 
+    
 })
