@@ -24,3 +24,21 @@
       padding: 10px;
   }
 
+  .jokeRating {
+    margin: 10px 0px;
+    font-size: 18px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 300px;
+    border: 2px solid tomato;
+    border-radius: 20px;
+    padding: 10px;
+  }
+
+  .jokeRating div:nth-of-type(2) {
+    text-align: center;
+  }
+

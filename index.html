@@ -19,9 +19,9 @@
             <p class="jokeContent"></p>
         </div>
     </div>
-    <div class="joke">
+    <div class="jokeRating">
         <div>
-            <form>
+            <form id="myForm">
                 <p>How do you like this one?</p>
                 <div>
                     <input type="radio" name="rating" value="5"> 5 stars!<br>
@@ -31,7 +31,7 @@
                     <input type="radio" name="rating" value="1"> ...1<br>
                 </div>
                 <div>
-                    <button type="submit">Submit</button>
+                    <button id="rateBtn" type="submit">Submit</button>
                 </div>
               </form>
             <p>Current rating: <span id="jokeRate">0</span></p>
