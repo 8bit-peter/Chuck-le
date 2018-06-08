@@ -23,9 +23,8 @@ $( () => {
         e.preventDefault();
         jokeRates.push($('input[name=rating]:checked', '#myForm').val());
         jokeAvg = jokeRates.reduce(function(a, b) {
-            return (parseInt(a) + parseInt(b)) / jokeRates.length;
-            
-        });
+            return (parseInt(a) + parseInt(b))
+        }) / jokeRates.length;
         console.log("---NEXT SUBMIT---")
         console.log("Joke Avg "+jokeAvg);
         console.log("Joke Rates "+jokeRates)
