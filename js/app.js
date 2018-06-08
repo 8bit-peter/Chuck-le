@@ -2,6 +2,15 @@ $( () => {
     
     const urlApi  = 'https://api.chucknorris.io/jokes/random';
 
+    var rateValue = $('#jokeRate');
+    var form = $('#myForm');
+    var checkedRate = form.find('input[name=rating]:checked', '#myForm').val();
+    var jokeRates = [];
+    var jokeAvg = 0;
+
+    // test
+    var jokeSum = 0;
+
     $.ajax ({
         url : urlApi,
         dataType : 'json'
@@ -10,21 +19,21 @@ $( () => {
         $('.jokeContent').text(e.value);
     });
 
-    var rateValue = $('#jokeRate');
-    var form = $('#myForm');
-    var checkedRate = form.find('input[name=rating]:checked', '#myForm').val();
-
     $('#myForm').submit(function(e) {
         e.preventDefault();
-        console.log($('input[name=rating]:checked', '#myForm').val());
-    })
-
-    // $('#myForm input').on('change', function() {
-    //     alert($('input[name=rating]:checked', '#myForm').val()); 
-    //  });
-
-    //  $('#myForm input').on('change', function() {
-    //     alert($('input[name=rating]:checked', '#myForm').val()); 
-    //  });
+        jokeRates.push($('input[name=rating]:checked', '#myForm').val());
+        jokeAvg = jokeRates.reduce(function(a, b) {
+            return (parseInt(a) + parseInt(b)) / jokeRates.length;
+            
+        });
+        console.log("---NEXT SUBMIT---")
+        console.log("Joke Avg "+jokeAvg);
+        console.log("Joke Rates "+jokeRates)
+        console.log("Joke length "+jokeRates.length);
+        jokeSum = jokeRates.reduce(function(a, b) {
+            return parseInt(a) + parseInt(b)
+        });
+        console.log("Joke SUm "+jokeSum)
+    });
     
-})
+});
