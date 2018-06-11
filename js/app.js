@@ -39,6 +39,16 @@ $( () => {
         getJoke();
 
     });
+
+    window.onresize = function(event) {
+        if($(window).width() < 600) {
+            $(".joke").css("width", $(window).width());
+            $(".jokeRating").css("width", $(window).width());
+        } else {
+            $(".joke").css("width", 600);
+            $(".jokeRating").css("width", 600);
+        } 
+    };
     
 });
 
