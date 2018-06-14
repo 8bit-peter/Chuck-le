@@ -23,20 +23,27 @@ $( () => {
 
     $('#myForm').submit(function(e) {
         e.preventDefault();
-        jokeRates.push($('input[name=rating]:checked', '#myForm').val());
-        jokeAvg = jokeRates.reduce(function(a, b) {
-            return (parseInt(a) + parseInt(b))
-        }) / jokeRates.length;
 
-        jokeAvgFixed = jokeAvg.toFixed(2);
+        if($('input[name=rating]:checked', '#myForm').val() == undefined) {
+            alert("You must rate the current joke to get new one");
+        } else {
+            jokeRates.push($('input[name=rating]:checked', '#myForm').val());
 
-        rateValue.text(jokeAvgFixed);
+            jokeAvg = jokeRates.reduce(function(a, b) {
+                return (parseInt(a) + parseInt(b))
+            }) / jokeRates.length;
 
-        $('input[name=rating]:checked').each(function(){
-            $(this).prop('checked', false);
-        });
+            jokeAvgFixed = jokeAvg.toFixed(2);
 
-        getJoke();
+            rateValue.text(jokeAvgFixed);
+
+            $('input[name=rating]:checked').each(function(){
+                $(this).prop('checked', false);
+            });
+
+            getJoke();
+        }
+
 
     });
 
