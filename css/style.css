@@ -3,6 +3,22 @@
     font-family: 'Oswald', sans-serif;
   }
 
+  .head h1 {
+    background-image: url("../US-Flag-Large.jpg");
+    background-size: cover;
+  }
+
+  .head h1::before {
+    text-transform: uppercase;
+    font-size: 50px;
+    content: 'Chuck Norris Jokes';
+    color: #222;
+    background-color: #fff;
+    padding: 1rem;
+    z-index: 1;
+    mix-blend-mode: screen;
+  }
+
   .bodyMain {
     display: flex;
     flex-direction: column;
